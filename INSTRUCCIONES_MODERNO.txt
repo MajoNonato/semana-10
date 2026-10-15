@@ -1,0 +1,24 @@
+INVERNADERO IOT - DASHBOARD MODERNO
+==================================
+1. Descomprime el ZIP en una carpeta NUEVA.
+2. Abre esa carpeta en VS Code y abre Docker Desktop.
+3. Terminal de VS Code: docker compose up -d --build
+4. Espera que termine la descarga e instalación.
+5. Editor: http://localhost:1880
+6. Dashboard: http://localhost:1880/ui
+7. Lecturas normales: 180, 350, 520, 750, 900 lux cada 5 segundos.
+8. Para probar la alerta, desactiva temporalmente Repeat del nodo
+   "Lectura cada 5 segundos", pulsa Done y Deploy.
+9. Pulsa el cuadrito a la izquierda de "RETO: 1250 lux".
+   El dashboard debe mostrar 1250 lux y ALERTA: iluminación alta.
+10. CSV: datos/lecturas.csv
+11. Detener: docker compose down
+
+IMPORTANTE: Usa carpeta NUEVA para evitar mezclar volúmenes antiguos.
+No uses docker compose down -v en tu proyecto anterior: borraría
+los datos internos del volumen de Node-RED.
+Si ya tienes el proyecto anterior corriendo, detenlo primero con
+docker compose down desde su carpeta, para liberar puertos 1880 y 1883.
+Las lecturas del CSV anterior NO se trasladan automáticamente.
+Los colores y diseño del dashboard son nuevos; MQTT, CSV y alerta siguen.
+El umbral 1000 lux es ilustrativo para la evaluación, no agronómico.
